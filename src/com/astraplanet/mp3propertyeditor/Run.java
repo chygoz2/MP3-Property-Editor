@@ -80,6 +80,11 @@ public class Run {
 			  	
 			  	if (!newfile.equals(file)) {
 			  		mp3file.save(newfile);
+			  	} else if (newfile.indexOf("-1") > -1) {
+		  			newfile = newfile.replace("-1", "");
+		  			mp3file.save(newfile);
+		  		} else {
+		  			mp3file.save(newfile + "-1");
 			  	}
 			
 				new File(oldFile).delete();
